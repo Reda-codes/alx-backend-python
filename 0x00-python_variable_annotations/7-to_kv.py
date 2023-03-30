@@ -2,6 +2,7 @@
 '''
 type-annotated function to_kv
 '''
+from typing import Union
 
 
 def to_kv(k: str, v: Union[int, float]) -> tuple[str, float]:
