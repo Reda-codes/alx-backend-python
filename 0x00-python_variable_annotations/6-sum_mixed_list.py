@@ -2,9 +2,9 @@
 '''
 type-annotated function sum_mixed_list
 '''
-from typing import Union
+from typing import List, Union
 
 
-def sum_mixed_list(mxd_lst: list[Union[float, int]]) -> float:
+def sum_mixed_list(mxd_lst: List[Union[int, float]]) -> float:
     '''sum mixed'''
-    return sum(mxd_lst)
+    return float(sum(mxd_lst))
