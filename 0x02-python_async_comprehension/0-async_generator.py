@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import time
+import asyncio
 import random
 from typing import AsyncGenerator
 '''
@@ -12,5 +12,5 @@ then yield a random number between 0 and 10
 async def async_generator() -> AsyncGenerator[float, None]:
     '''async_generator function'''
     for i in range(10):
-        time.sleep(1)
+        await asyncio.sleep(1)
         yield random.uniform(0, 10)
