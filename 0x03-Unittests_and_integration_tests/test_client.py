@@ -82,8 +82,8 @@ class TestIntegrationGithubOrgClient(unittest.TestCase):
 
     def test_public_repos(self):
         """ test_public_repos method """
-        pass        
+        test = GithubOrgClient("testing")
 
     def test_public_repos_with_license(self):
         """ test_public_repos_with_license method """
-        pass
+        test = GithubOrgClient("testing")
