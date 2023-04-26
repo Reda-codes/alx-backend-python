@@ -6,7 +6,6 @@ import unittest
 from parameterized import parameterized
 from unittest.mock import patch, PropertyMock
 import client
-from fixtures import TEST_PAYLOAD
 
 
 GithubOrgClient = __import__('client').GithubOrgClient
@@ -63,7 +62,7 @@ class TestGithubOrgClient(unittest.TestCase):
         self.assertEqual(expected_return, ret)
 
 
-@parameterized((
+@parameterized_class((
     "org_payload",
     "repos_payload",
     "expected_repos",
@@ -78,3 +77,11 @@ class TestIntegrationGithubOrgClient(unittest.TestCase):
     def tearDownClass(clss):
         """ tearDownClass method """
         clss.get_patcher.stop()
+
+    def test_public_repos(self):
+        """ test_public_repos method """
+        pass
+
+    def test_public_repos_with_license(self):
+        """ test_public_repos_with_license method """
+        pass
