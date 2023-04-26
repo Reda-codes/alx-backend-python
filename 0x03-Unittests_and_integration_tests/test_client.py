@@ -3,9 +3,11 @@
 TestGithubOrgClient class to test client
 """
 import unittest
-from parameterized import parameterized
+from parameterized import parameterized, parameterized_class
 from unittest.mock import patch, PropertyMock
 import client
+from urllib.error import HTTPError
+from fixtures import TEST_PAYLOAD
 
 
 GithubOrgClient = __import__('client').GithubOrgClient
@@ -66,7 +68,7 @@ class TestGithubOrgClient(unittest.TestCase):
     "org_payload",
     "repos_payload",
     "expected_repos",
-    "apache2_repos"))
+    "apache2_repos"), TEST_PAYLOAD)
 class TestIntegrationGithubOrgClient(unittest.TestCase):
     @classmethod
     def setUpClass(clss):
@@ -80,7 +82,7 @@ class TestIntegrationGithubOrgClient(unittest.TestCase):
 
     def test_public_repos(self):
         """ test_public_repos method """
-        pass
+        pass        
 
     def test_public_repos_with_license(self):
         """ test_public_repos_with_license method """
